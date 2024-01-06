@@ -1,11 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Verticalism - Store</title>
+    <link rel="shortcut icon" href="img/brand-logo-title.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
-    
+<body class="h-full">
+    <nav class="w-full h-14 fixed bg-blue-950 flex pl-4 pr-4 shadow-lg">
+        <!-- logo -->
+        <div class="logo w-full h-full flex">
+            <a href="index.html" class="logo flex items-center p-4 w-56">
+                <img class="" src="img/brand-logo-text.png" alt="logo">
+            </a>            
+        </div>
+        <!-- search -->
+        <div class="search h-full w-full flex justify-end">
+            <div class="search-bar flex items-center gap-4 text-white h-full">
+                <i class="fa-solid fa-magnifying-glass hover:text-blue-600"></i>
+                <input type="text" class="h-8 rounded-full px-5 hidden md:flex" placeholder="Search Di Verticalism...">
+            </div>
+        </div>
+        <!-- links -->
+        <div class="links-col h-full flex justify-end px-4">
+            <div class="links text-white flex gap-6 items-center">
+                <div class="shop-links hidden sm:flex gap-6">
+                    <a href="#" class="hover:text-blue-600"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="#" class="hover:text-blue-600"><i class="fa-solid fa-bell"></i></a>
+                    <a href="#" class="hover:text-blue-600"><i class="fa-regular fa-envelope"></i></a>
+                    <a href="#" class="hover:text-blue-600"><i class="fa-solid fa-gear"></i></a> 
+                </div>
+                <div class="bar block sm:hidden">
+                    <a href="#" class="hover:text-blue-600"><i class="fa-solid fa-bars"></i></a>                    
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- main -->
+    <main class="h-full w-full">
+        <div class="main-content top-12 w-full flex flex-col">
+            <!-- promosi -->
+            <div class="promosi-con mx-12 border">
+                <div class="promosi h-64 w-full">
+                    <img class="w-full h-full" src="img/blue-gradient.avif" alt="">
+                </div>
+            </div>
+            <div class="link-1"></div>
+        </div>
+    </main>
 </body>
 </html>
