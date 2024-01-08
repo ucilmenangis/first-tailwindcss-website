@@ -12,46 +12,688 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body class="h-full">
-    <nav class="w-full h-14 fixed bg-blue-950 flex pl-4 pr-4 shadow-lg">
-        <!-- logo -->
-        <div class="logo w-full h-full flex">
-            <a href="index.html" class="logo flex items-center p-4 w-56">
-                <img class="" src="img/brand-logo-text.png" alt="logo">
-            </a>            
-        </div>
-        <!-- search -->
-        <div class="search h-full w-full flex justify-end">
-            <div class="search-bar flex items-center gap-4 text-white h-full">
-                <i class="fa-solid fa-magnifying-glass hover:text-blue-600"></i>
-                <input type="text" class="h-8 rounded-full px-5 hidden md:flex" placeholder="Search Di Verticalism...">
+    <nav class="w-full fixed bg-gray-800 flex drop-shadow-lg flex-col z-50">
+        <div class="default-con h-14 pl-4 pr-4 flex">
+            <!-- logo -->
+            <div class="logo w-full h-full flex">
+                <a href="index.html" class="logo flex items-center p-4 w-56">
+                    <img class="" src="img/brand-logo-text.png" alt="logo">
+                </a>            
             </div>
-        </div>
-        <!-- links -->
-        <div class="links-col h-full flex justify-end px-4">
-            <div class="links text-white flex gap-6 items-center">
-                <div class="shop-links hidden sm:flex gap-6">
-                    <a href="#" class="hover:text-blue-600"><i class="fa-solid fa-cart-shopping"></i></a>
-                    <a href="#" class="hover:text-blue-600"><i class="fa-solid fa-bell"></i></a>
-                    <a href="#" class="hover:text-blue-600"><i class="fa-regular fa-envelope"></i></a>
-                    <a href="#" class="hover:text-blue-600"><i class="fa-solid fa-gear"></i></a> 
+            <!-- search -->
+            <div class="search h-full w-full flex justify-end">
+                <div class="search-bar flex items-center gap-4 text-white h-full">
+                    <i class="fa-solid fa-magnifying-glass hover:text-blue-600"></i>
+                    <input type="text" class="h-8 rounded-full px-5 hidden md:flex shadow-lg" placeholder="Search Di Verticalism...">
                 </div>
-                <div class="bar block sm:hidden">
-                    <a href="#" class="hover:text-blue-600"><i class="fa-solid fa-bars"></i></a>                    
+            </div>
+            <!-- links -->
+            <div class="links-col h-full flex justify-end px-4">
+                <div class="links text-white flex gap-6 items-center">
+                    <div class="shop-links hidden sm:flex gap-6">
+                        <a href="#" class="hover:text-blue-600"><i class="fa-solid fa-cart-shopping shadow-lg"></i></a>
+                        <a href="#" class="hover:text-blue-600"><i class="fa-solid fa-bell shadow-lg"></i></a>
+                        <a href="#" class="hover:text-blue-600"><i class="fa-regular fa-envelope shadow-lg"></i></a>
+                        <a href="#" class="hover:text-blue-600"><i class="fa-solid fa-circle-user shadow-lg"></i></a> 
+                    </div>
+                    <div class="bar block md:hidden">
+                        <button class="hover:text-blue-600" id="navbar-button"><i class="fa-solid fa-bars"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
-    <!-- main -->
-    <main class="h-full w-full">
-        <div class="main-content top-12 w-full flex flex-col">
-            <!-- promosi -->
-            <div class="promosi-con mx-12 border">
-                <div class="promosi h-64 w-full">
-                    <img class="w-full h-full" src="img/blue-gradient.avif" alt="">
+    <!-- navbar responsive -->
+        <div class="res fixed w-full -translate-y-48 z-40 bg-gray-800 h-auto px-4 transition-all ease-out duration-300 shadow-lg" id="nav-res">
+            <div class="search p-4 border-t-2 flex justify-center items-center gap-2">
+                <h1 class="text-center font-bold text-white">Search</h1><i class="fa-solid fa-chevron-down text-white"></i>
+            </div>
+            <div class="search p-4 border-t-2 flex justify-center items-center gap-2">
+                <h1 class="text-center font-bold text-white">Sort</h1><i class="fa-solid fa-chevron-down text-white"></i>
+            </div>
+            <div class="search p-4 border-t-2 flex justify-center items-center gap-2">
+                <h1 class="text-center font-bold text-white">Category</h1><i class="fa-solid fa-chevron-down text-white"></i>
+            </div>
+            <div class="search p-4 border-t-2 flex justify-center items-center gap-2">
+                <h1 class="text-center font-bold text-white">Filter</h1><i class="fa-solid fa-chevron-down text-white"></i>
+            </div>
+        </div>
+    <main class="h-auto w-auto flex">
+        <!-- sidebar -->
+        <div class="sidebar w-96 bg-gray-900 hidden md:flex flex-col px-4" id="kode">
+            <div class="filter mt-14 border-b-2 p-4 border-white">
+                <h1 class="font-bold text-white text-center">FILTER</h1>
+            </div>
+            <!-- list -->
+            <div class="filter-content border-b-2 p-4 border-gray-200">
+                <h1 class="font-bold text-white">DIVISION</h1>
+                <div class="list">
+                    <ol class="px-2">
+                        <li class="flex gap-3"><input type="checkbox" class="border-hidden"><p class="text-gray-200">CPU</p></li>
+                        <li class="flex gap-3"><input type="checkbox" class="border-hidden"><p class="text-gray-200">GPU</p></li>
+                        <li class="flex gap-3"><input type="checkbox" class="border-hidden"><p class="text-gray-200">Power Supply</p></li>
+                        <li class="flex gap-3"><input type="checkbox" class="border-hidden"><p class="text-gray-200">Motherboard</p></li>
+                    </ol>
                 </div>
             </div>
-            <div class="link-1"></div>
+             <!-- list -->
+            <div class="filter-content border-b-2 p-4 border-gray-200">
+                <h1 class="font-bold text-white">GPU</h1>
+                <div class="list">
+                    <ol class="px-2">
+                        <li class="flex gap-3"><input type="checkbox" class="border-hidden"><p class="text-gray-200">RTX 4090</p></li>
+                        <li class="flex gap-3"><input type="checkbox" class="border-hidden"><p class="text-gray-200">RTX 4080</p></li>
+                        <li class="flex gap-3"><input type="checkbox" class="border-hidden"><p class="text-gray-200">RTX 4070</p></li>
+                        <li class="flex gap-3"><input type="checkbox" class="border-hidden"><p class="text-gray-200">RTX 4060</p></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- list -->
+            <div class="filter-content border-b-2 p-4 border-gray-200">
+                <h1 class="font-bold text-white">KEYBOARD</h1>
+                <div class="list">
+                    <ol class="px-2">
+                        <li class="flex gap-3"><input type="checkbox" class="border-hidden"><p class="text-gray-200">Key Caps</p></li>
+                        <li class="flex gap-3"><input type="checkbox" class="border-hidden"><p class="text-gray-200">Keyboard</p></li>
+                        <li class="flex gap-3"><input type="checkbox" class="border-hidden"><p class="text-gray-200">Custom</p></li>
+                        <li class="flex gap-3"><input type="checkbox" class="border-hidden"><p class="text-gray-200">Tools</p></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- list -->
+            <div class="filter-content border-b-2 p-4 border-gray-200">
+                <h1 class="font-bold text-white">SERVER</h1>
+                <div class="list">
+                    <ol class="px-2">
+                        <li class="flex gap-3"><input type="checkbox" class="border-hidden"><p class="text-gray-200">CPU Server</p></li>
+                        <li class="flex gap-3"><input type="checkbox" class="border-hidden"><p class="text-gray-200">GPU Workstation</p></li>
+                        <li class="flex gap-3"><input type="checkbox" class="border-hidden"><p class="text-gray-200">RAM Server</p></li>
+                        <li class="flex gap-3"><input type="checkbox" class="border-hidden"><p class="text-gray-200">Intel Xeon</p></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- harga -->
+            <div class="harga p-4 flex flex-col gap-2">
+                <div class="minimum flex gap-2 flex-col">
+                    <label for="price" class="font-bold text-white">Harga Minimum :</label>
+                    <input type="text" class="p-2 rounded-full shadow-lg" placeholder="1.000.000">
+                </div>
+                <div class="maximal flex gap-2 flex-col">
+                    <label for="price" class="font-bold text-white">Harga Maximal :</label>
+                    <input type="text" class="p-2 rounded-full shadow-lg" placeholder="2.000.000">
+                </div>
+            </div>
+            <!-- save -->
+            <div class="save p-4 border-t-2">
+                <button type="button" class="bg-blue-700 text-white p-2 rounded-full w-full shadow-lg font-bold">SAVE</button>
+            </div>
+        </div>
+        <!-- main -->
+        <div class="main-content w-full flex flex-col gap-4 bg-slate-200">
+            <div class="top mt-14"></div>
+            <!-- founded -->
+            <div class="founded flex px-4">
+                <div class="found-number w-full">
+                    <h1 class="font-bold drop-shadow-lg text-gray-500"><span class="text-2xl text-gray-800">418 </span>PRODUCT FOUND</h1>
+                </div>
+                <div class="refresh w-full flex justify-end">
+                    <a href="store.html" type="button" class="p-2 flex gap-2 items-center text-white drop-shadow-lg bg-green-600 rounded-md hover:bg-green-500"><p class="font-bold">Refresh</p><i class="fa-solid fa-arrows-rotate"></i></a>
+                </div>
+            </div>
+            <!-- sorting -->
+            <div class="sorting mx-4 py-6 flex gap-5 border-t border-gray-700">
+                <div class="category flex gap-4 w-auto flex-wrap">
+                    <div class="on-sale flex items-center gap-2"><i class="fa-solid fa-tag text-green-600"></i><p class="hidden sm:inline font-bold">On Sale</p></div>
+                    <div class="on-sale flex items-center gap-2"><i class="fa-solid fa-circle-check text-yellow-500"></i><p class="hidden sm:inline font-bold">New</p></div>
+                    <div class="on-sale flex items-center gap-2"><i class="fa-solid fa-circle-exclamation text-red-700"></i><p class="hidden sm:inline font-bold">Out Of Stock</p></div>
+                    <div class="on-sale flex items-center gap-2"><i class="fa-regular fa-circle-xmark text-gray-600"></i><p class="hidden sm:inline font-bold">Discontinue</p></div>
+                </div>
+                <div class="sort-button flex justify-end ml-auto">
+                    <div class="flex flex-col lg:flex-row gap-2 font-bold h-8 items-center">
+                        <p>Sort By - </p>
+                        <input type="text" class="rounded px-2 w-24 shadow-lg" placeholder="Name...">
+                    </div>
+                </div>
+            </div>
+            <!-- barang container -->
+            <div class="link-1 flex gap-3 p-3 justify-center lg:p-6 items-stretch border  flex-wrap">
+                <!-- barang 1 -->
+                <div class="img w-full sm-v:w-56 md:w-full md-780:w-56 bg-white shadow-lg">
+                    <div class="w-full md:h-40">
+                        <img class="object-scale-down w-full max-h-full text-center" src="img/RTX 4090 Suprim.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">RTX 4090 MSI Suprim</h1>
+                        <div class="terjual flex">
+                            <div class="link flex gap-2 w-full items-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>   
+                                <i class="fa-solid fa-circle-exclamation text-red-700"></i>                             
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>5</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- barang 1 -->
+                <div class="img w-full sm-v:w-56 md:w-full md-780:w-56 bg-white shadow-lg">
+                    <div class="w-full md:h-40">
+                        <img class="object-scale-down w-full h-full" src="img/Intel i5 12500F.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">Intel I5 12500F</h1>
+                        <div class="terjual flex object-fill">
+                            <div class="link flex gap-2 w-full items-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>
+                                <i class="fa-solid fa-circle-exclamation text-red-700"></i>
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>50</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- barang 1 -->
+                <div class="img w-full sm-v:w-56 md:w-full md-780:w-56 bg-white shadow-lg">
+                    <div class="w-full h-40">
+                        <img class="object-scale-down w-full h-full" src="img/athlon.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">Atlhon 7600</h1>
+                        <div class="terjual flex object-fill">
+                            <div class="link flex gap-2 w-full items-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>
+                                <i class="fa-solid fa-tag text-green-600"></i>
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>250</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- barang 1 -->
+                <div class="img w-full sm-v:w-56 md:w-full md-780:w-56  bg-white shadow-lg">
+                    <div class="w-full h-40">
+                        <img class="object-scale-down w-full h-full" src="img/Ryzen 9 7900X.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">Ryzen 9 7900X</h1>
+                        <div class="terjual flex object-fill">
+                            <div class="link flex gap-2 w-full items-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>
+                                <i class="fa-solid fa-circle-exclamation text-red-700"></i>
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>1250</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- barang 1 -->
+                <div class="img w-full sm-v:w-56 md:w-full md-780:w-56 bg-white shadow-lg">
+                    <div class="w-full h-40">
+                        <img class="object-scale-down w-full max-h-full" src="img/Cooler Master A9B25.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">Cooler Master A9B25</h1>
+                        <div class="terjual flex object-fill">
+                            <div class="link flex gap-2 w-full items-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>
+                                <i class="fa-solid fa-tag text-green-600"></i>
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>70</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- barang 1 -->
+                <div class="img w-full sm-v:w-56 md:w-full md-780:w-56 bg-white shadow-lg">
+                    <div class="w-full h-40">
+                        <img class="object-scale-down w-full max-h-full" src="img/Hydro M.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">Hydro M Pro Bronze+</h1>
+                        <div class="terjual flex object-fill">
+                            <div class="link flex gap-2 w-full items-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>
+                                <i class="fa-solid fa-tag text-green-600"></i>
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>10</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- barang 1 -->
+                <div class="img w-full sm-v:w-56 md:w-full md-780:w-56 bg-white shadow-lg">
+                    <div class="w-full h-40">
+                        <img class="object-scale-down w-full max-h-full" src="img/Ryzen 3 5300.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">Ryzen 3 5300</h1>
+                        <div class="terjual flex object-fill">
+                            <div class="link flex gap-2 w-full items-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>
+                                <i class="fa-solid fa-circle-check text-yellow-500"></i>
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>20</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- barang 1 -->
+                <div class="img sm-v:w-56 w-full h-auto md:w-full md-780:w-56 bg-white shadow-lg">
+                    <div class="w-full h-40">
+                        <img class="object-scale-down w-full max-h-full" src="img/intel i3 10300.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">Intel i3 10300</h1>
+                        <div class="terjual flex object-fill">
+                            <div class="link flex gap-2 w-full items-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>
+                                <i class="fa-solid fa-tag text-green-600"></i>
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>10</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- barang 1 -->
+                <div class="img w-full sm-v:w-56 md:w-full md-780:w-56 bg-white shadow-lg">
+                    <div class="w-full h-40">
+                        <img class="object-scale-down w-full max-h-full" src="img/cube gaming casing H2851.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">Cube Gaming Case H2851</h1>
+                        <div class="terjual flex object-fill">
+                            <div class="link flex gap-2 w-full items-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>
+                                <i class="fa-solid fa-circle-check text-yellow-500"></i>
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>100</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- barang 1 -->
+                <div class="img w-full sm-v:w-56 md:w-full md-780:w-56 bg-white shadow-lg">
+                    <div class="w-full h-40">
+                        <img class="object-scale-down w-full max-h-full" src="img/rtx 3060 pny.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">RTX 3060 PNY White</h1>
+                        <div class="terjual flex object-fill">
+                            <div class="link flex gap-2 w-full items-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>
+                                <i class="fa-solid fa-circle-exclamation text-red-700"></i>
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>40</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- barang 1 -->
+                <div class="img w-full sm-v:w-56 md:w-full md-780:w-56 bg-white shadow-lg">
+                    <div class="w-full h-40">
+                        <img class="object-scale-down w-full max-h-full" src="img/rtx 3070 gigabyte.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">RTX 3070 Gigabyte 3 Fans</h1>
+                        <div class="terjual flex object-fill">
+                            <div class="link flex gap-2 w-full itemse-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>
+                                <i class="fa-regular fa-circle-xmark text-gray-600"></i>
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>15</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- barang 1 -->
+                <div class="img w-full sm-v:w-56 md:w-full md-780:w-56 bg-white shadow-lg">
+                    <div class="w-full h-40">
+                        <img class="object-scale-down w-full max-h-full" src="img/rtx 3060 zotac.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">RTX 3060 Zotac</h1>
+                        <div class="terjual flex object-fill">
+                            <div class="link flex gap-2 w-full items-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>
+                                <i class="fa-solid fa-tag text-green-600"></i>
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>25</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- barang 1 -->
+                <div class="img w-full sm-v:w-56 md:w-full md-780:w-56 bg-white shadow-lg">
+                    <div class="w-full h-40">
+                        <img class="object-scale-down w-full max-h-full" src="img/mx4 thermal paste.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">MX-4 Thermal Paste 8gr</h1>
+                        <div class="terjual flex object-fill">
+                            <div class="link flex gap-2 w-full items-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>
+                                <i class="fa-solid fa-circle-check text-yellow-500"></i>
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>50</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- barang 1 -->
+                <div class="img w-full sm-v:w-56 md:w-full md-780:w-56 bg-white shadow-lg">
+                    <div class="w-full h-40">
+                        <img class="object-scale-down w-full max-h-full" src="img/rtx 2060 FE edition.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">RTX 2060 FE</h1>
+                        <div class="terjual flex object-fill">
+                            <div class="link flex gap-2 w-full items-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>
+                                <i class="fa-solid fa-circle-check text-yellow-500"></i>
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>10</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- barang 1 -->
+                <div class="img w-full sm-v:w-56 md:w-full md-780:w-56  bg-white shadow-lg">
+                    <div class="w-full h-40">
+                        <img class="object-scale-down w-full max-h-full" src="img/lenovo legion pro rtx 4070.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">Lenovo Legion Pro RTX 4070</h1>
+                        <div class="terjual flex object-fill">
+                            <div class="link flex gap-2 w-full items-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>
+                                <i class="fa-solid fa-circle-check text-yellow-500"></i>
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>70</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- barang 1 -->
+                <div class="img w-full sm-v:w-56 md:w-full md-780:w-56 bg-white shadow-lg">
+                    <div class="w-full h-40">
+                        <img class="object-scale-down w-full max-h-full" src="img/msi gtx 1650.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">MSI GTX 1650 Modern</h1>
+                        <div class="terjual flex object-fill">
+                            <div class="link flex gap-2 w-full items-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>
+                                <i class="fa-solid fa-circle-check text-yellow-500"></i>
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>20</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- barang 1 -->
+                <div class="img w-full sm-v:w-56 md:w-full md-780:w-56 bg-white shadow-lg">
+                    <div class="w-full h-40">
+                        <img class="object-scale-down w-full max-h-full" src="img/msi katana gf66.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">MSI Katana GF66</h1>
+                        <div class="terjual flex object-fill">
+                            <div class="link flex gap-2 w-full items-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>
+                                <i class="fa-solid fa-circle-check text-yellow-500"></i>
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>150</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- barang 1 -->
+                <div class="img w-full sm-v:w-56 md:w-full md-780:w-56 bg-white shadow-lg">
+                    <div class="w-full h-40">
+                        <img class="object-scale-down w-full max-h-full" src="img/msi PSU MPG 750 SILVER+.jpg.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">MSI PSU MPG 750 SILVER+</h1>
+                        <div class="terjual flex object-fill">
+                            <div class="link flex gap-2 w-full items-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>
+                                <i class="fa-solid fa-circle-check text-yellow-500"></i>
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>50</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- barang 1 -->
+                <div class="img w-full sm-v:w-56 md:w-full md-780:w-56 bg-white shadow-lg">
+                    <div class="w-full h-40">
+                        <img class="object-scale-down w-full max-h-full" src="img/asus tuf gtx 1650.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">ASUS TUF GTX 1650</h1>
+                        <div class="terjual flex object-fill">
+                            <div class="link flex gap-2 w-full items-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>
+                                <i class="fa-solid fa-circle-check text-yellow-500"></i>
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>50</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- barang 1 -->
+                <div class="img w-full sm-v:w-56 md:w-full md-780:w-56 bg-white shadow-lg">
+                    <div class="w-full h-40">
+                        <img class="object-scale-down w-full max-h-full" src="img/corsair case 300 white edition.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">CORSAIR Case 300 White</h1>
+                        <div class="terjual flex object-fill">
+                            <div class="link flex gap-2 w-full items-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>
+                                <i class="fa-solid fa-circle-check text-yellow-500"></i>
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>50</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- barang 1 -->
+                <div class="img w-full sm-v:w-56 md:w-full md-780:w-56 bg-white shadow-lg">
+                    <div class="w-full h-40">
+                        <img class="object-scale-down w-full max-h-full" src="img/Lenovo idepad 16.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">Lenovo Idepad 16 Slim</h1>
+                        <div class="terjual flex object-fill">
+                            <div class="link flex gap-2 w-full items-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>
+                                <i class="fa-solid fa-circle-check text-yellow-500"></i>
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>50</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- barang 1 -->
+                <div class="img w-full sm-v:w-56 md:w-full md-780:w-56 bg-white shadow-lg">
+                    <div class="w-full h-40">
+                        <img class="object-scale-down w-full max-h-full" src="img/corsair case 7000D.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">Corsair Case 7000D</h1>
+                        <div class="terjual flex object-fill">
+                            <div class="link flex gap-2 w-full items-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>
+                                <i class="fa-solid fa-circle-check text-yellow-500"></i>
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>50</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- barang 1 -->
+                <div class="img w-full sm-v:w-56 md:w-full md-780:w-56 bg-white shadow-lg">
+                    <div class="w-full h-40">
+                        <img class="object-scale-down w-full max-h-full" src="img/msi b650m tomahawk.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">MSI B650M Tomahawk</h1>
+                        <div class="terjual flex object-fill">
+                            <div class="link flex gap-2 w-full items-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>
+                                <i class="fa-solid fa-circle-check text-yellow-500"></i>
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>50</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- barang 1 -->
+                <div class="img w-full sm-v:w-56 md:w-full md-780:w-56 bg-white shadow-lg">
+                    <div class="w-full h-40">
+                        <img class="object-scale-down w-full max-h-full" src="img/ifixit toolkit.jpg" alt="">
+                    </div>
+                    <div class="p-2 w-full h-auto">
+                        <h1 class="font-bold">IFIXIT Full Kits Electronic</h1>
+                        <div class="terjual flex object-fill">
+                            <div class="link flex gap-2 w-full items-center">
+                                <i class="fa-regular fa-heart hover:text-red-700"></i>
+                                <i class="fa-regular fa-star hover:text-yellow-400"></i>
+                                <i class="fa-solid fa-circle-check text-yellow-500"></i>
+                            </div>
+                            <div class="text w-full">
+                                <p class="text-center w-full">Terjual <span>50</span>+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end of card -->
+            </div>
+            <!-- show how much item -->
+            <div class="flex">
+                <button class="left mr-auto flex p-4">
+                    <div class="flex gap-2 p-2 rounded-md items-center text-blue-700 transition-all duration-300 hover:bg-slate-300">
+                        <i class="fa-solid fa-chevron-left"></i>
+                        <h1 class="font-bold ">LEFT</h1>
+                    </div>
+                </button>
+                <div class="page-con flex items-center">
+                    <div class="page flex gap-2 text-blue-700 font-bold">
+                    <p>1</p>
+                    <p>2</p>
+                    <p>3</p>
+                    <p>...</p>
+                    <p>10</p>
+                    </div>
+                </div>
+                <button class="right ml-auto flex gap-2 items-center p-4 text-blue-700 ">
+                    <div class="flex gap-2 p-2 rounded-md items-center text-blue-700 transition-all duration-300 hover:bg-slate-300">
+                        <h1 class="font-bold ">RIGHT</h1>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </button>
+            </div>
         </div>
     </main>
+    <footer class="flex flex-col sm:px-10 bg-gray-800 text-white">
+        <!-- col-1 -->
+        <div class="footer-col-1 flex flex-col sm:flex-row p-10">
+            <div class="footer-logo w-full flex justify-center items-center">
+                <img class="w-auto h-auto p-2" src="img/brand-logo-text.png" alt="brand-logo">
+            </div>         
+            <div class="footer-links-container w-full p-5 flex justify-center items-center font-bold">
+                <div class="footer-links-content flex sm:flex-col flex-wrap gap-4 justify-center">
+                    <a href="#" class="hover:text-blue-600 transition-all duration-300">Services</a>
+                    <a href="#" class="hover:text-blue-600 transition-all duration-300">Contact</a>
+                    <a href="#" class="hover:text-blue-600 transition-all duration-300">Components</a>
+                    <a href="#" class="hover:text-blue-600 transition-all duration-300">About Us</a>
+                </div>
+            </div>               
+        </div>
+        <!-- col 2 -->
+        <div class="flex flex-col gap-5 p-5 border-solid border-t-2 border-white">
+            <div class="download flex flex-col gap-4">
+                <h1 class="font-bold text-2xl text-center">Downloads</h1>
+                <p class="italic text-center">"Download VERTICALISM on..."</p>
+                <div class="flex gap-5 justify-center flex-wrap">
+                    <img class="bg-white p-2 w-auto h-14 object-scale-down rounded-md border divide-solid border-black shadow-lg" src="img/Downloads Img/logo-appstore.png" alt="appstore">
+                    <img class="bg-white p-2 w-auto h-14 object-scale-down rounded-md border divide-solid border-black shadow-lg" src="img/Downloads Img/logo-googleplay.png" alt="google play">
+                    <img class="bg-white p-2 w-auto h-14 object-scale-down rounded-md border divide-solid border-black shadow-lg" src="img/Downloads Img/logo-pc.png" alt="pc">
+                </div>
+            </div>
+            <div class="payment flex flex-col gap-4 justify-center">
+                <h1 class="font-bold text-2xl text-center">Payment Methods</h1>
+                <p class="italic text-center ">"Transaction support by this payment..."</p>
+                <div class="flex gap-2 flex-wrap justify-center max-w-800">
+                    <img class="bg-white p-2 rounded-md w-auto h-24 object-scale-down border divide-solid border-black" src="img/Payments/Visa.png" alt="appstore">
+                    <img class="bg-white p-2 rounded-md w-auto h-24 object-scale-down border divide-solid border-black shadow-lg" src="img/Payments/MasterCard.png" alt="google play">
+                    <img class="bg-white p-2 rounded-md w-auto h-24 object-scale-down border divide-solid border-black shadow-lg" src="img/Payments/nobiPay.png" alt="appstore">
+                    <img class="bg-white p-2 rounded-md w-auto h-24 object-scale-down border divide-solid border-black shadow-lg" src="img/Payments/Agate Pay.png" alt="google play">
+                    <img class="bg-white p-2 rounded-md w-auto h-24 object-scale-down border divide-solid border-black shadow-lg" src="img/Payments/komoPayment.png" alt="google play"> 
+                    <img class="bg-white p-2 rounded-md w-auto h-24 object-scale-down border divide-solid border-black shadow-lg" src="img/Payments/paymark.jpg" alt="google play">
+                    <img class="bg-white p-2 rounded-md w-auto h-24 object-scale-down border divide-solid border-black shadow-lg" src="img/Payments/gopay.png" alt="google play">
+                    <img class="bg-white p-2 rounded-md w-auto h-24 object-scale-down border divide-solid border-black shadow-lg" src="img/Payments/dana.png" alt="google play">
+                </div>
+            </div>
+        </div>
+        <!-- col-3 -->
+        <div class="footer-col-2 p-10 flex justify-center items-center flex-col gap-6">
+            <div class="links flex gap-4">
+                <a href="https://www.youtube.com" class="border rounded-full shadow-lg p-2 w-12 h-12 flex justify-center items-center hover:text-blue-600 transition-all duration-300 hover:border-blue-600"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.google.com/maps" class="border rounded-full shadow-lg p-2 w-12 h-12 flex justify-center hover:text-blue-600 hover:border-blue-600 items-center transition-all duration-300"><i class="fa-solid fa-location-dot"></i></a>
+                <a href="https://www.twitter.com" class="border rounded-full shadow-lg p-2 w-12 h-12 flex justify-center hover:text-blue-600 hover:border-blue-600 items-center transition-all duration-300"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <div class="text">
+                <p class="font-semibold text-center">@Copyright By ANONYMOUS.Inc</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
+<script src="js/store.js"></script>
