@@ -9,3 +9,7 @@ navbarButton.addEventListener('click',() => {
     // navbarResponsiveUI.classList.toggle('hidden')
     console.log('berhasil')
 })
+
+function clickFilter (id,){
+    let i = document.getElementById('')
+}
